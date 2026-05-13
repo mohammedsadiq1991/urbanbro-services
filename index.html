@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UrbanBro Services</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f5f5f5;
+}
+
+/* HEADER */
+header {
+  background: #0b3c5d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header img {
+  width: 80px;
+}
+
+.tagline {
+  color: #f9a826;
+  font-weight: bold;
+}
+
+/* SERVICES */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* DROPDOWN BUTTON */
+.dropdown-btn {
+  width: 100%;
+  padding: 10px;
+  background: #0b3c5d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* DROPDOWN CONTENT */
+.dropdown-content {
+  display: none;
+  background: #f1f1f1;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+/* BUTTON */
+button {
+  background: #f9a826;
+  color: white;
+  border: none;
+  padding: 12px;
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* WORKER SECTION */
+.worker-section {
+  background: white;
+  padding: 25px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+footer {
+  background: #0b3c5d;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+</style>
+
+<script>
+function toggleDropdown(id) {
+  var x = document.getElementById(id);
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+function contact(service) {
+  let msg = "Hi UrbanBro Services, I need service for: " + service;
+  window.location.href = "https://wa.me/971501604258?text=" + encodeURIComponent(msg);
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+  <h1>UrbanBro Services</h1>
+  <p class="tagline">Fast Fixes. Trusted Bros.</p>
+</header>
+
+<!-- SERVICES -->
+<div class="services">
+
+  <!-- PLUMBING -->
+  <div class="card">
+    <h3>Plumbing</h3>
+    <button class="dropdown-btn" onclick="toggleDropdown('plumbing')">View Services</button>
+    <div class="dropdown-content" id="plumbing">
+      Leak Fixing<br>
+      Pipe Installation<br>
+      Water Heater Repair<br>
+    </div>
+    <button onclick="contact('Plumbing')">Get Quote</button>
+  </div>
+
+  <!-- ELECTRICAL -->
+  <div class="card">
+    <h3>Electrical</h3>
+    <button class="dropdown-btn" onclick="toggleDropdown('electrical')">View Services</button>
+    <div class="dropdown-content" id="electrical">
+      Wiring<br>
+      Light Installation<br>
+      DB Panel Fix<br>
+    </div>
+    <button onclick="contact('Electrical')">Get Quote</button>
+  </div>
+
+  <!-- AC -->
+  <div class="card">
+    <h3>AC Repair</h3>
+    <button class="dropdown-btn" onclick="toggleDropdown('ac')">View Services</button>
+    <div class="dropdown-content" id="ac">
+      AC Cleaning<br>
+      Gas Filling<br>
+      AC Installation<br>
+    </div>
+    <button onclick="contact('AC Repair')">Get Quote</button>
+  </div>
+
+  <!-- CARPENTRY -->
+  <div class="card">
+    <h3>Carpentry</h3>
+    <button class="dropdown-btn" onclick="toggleDropdown('carpentry')">View Services</button>
+    <div class="dropdown-content" id="carpentry">
+      Furniture Repair<br>
+      Cabinet Work<br>
+      Door Installation<br>
+    </div>
+    <button onclick="contact('Carpentry')">Get Quote</button>
+  </div>
+
+  <!-- PAINTING -->
+  <div class="card">
+    <h3>Painting</h3>
+    <button class="dropdown-btn" onclick="toggleDropdown('painting')">View Services</button>
+    <div class="dropdown-content" id="painting">
+      Wall Painting<br>
+      Texture Paint<br>
+      Ceiling Work<br>
+    </div>
+    <button onclick="contact('Painting')">Get Quote</button>
+  </div>
+
+  <!-- HANDYMAN -->
+  <div class="card">
+    <h3>Handyman</h3>
+    <button class="dropdown-btn" onclick="toggleDropdown('handyman')">View Services</button>
+    <div class="dropdown-content" id="handyman">
+      Minor Repairs<br>
+      Furniture Assembly<br>
+      Curtain Installation<br>
+    </div>
+    <button onclick="contact('Handyman')">Get Quote</button>
+  </div>
+
+  <!-- PEST CONTROL -->
+  <div class="card">
+    <h3>Pest Control</h3>
+    <button class="dropdown-btn" onclick="toggleDropdown('pest')">View Services</button>
+    <div class="dropdown-content" id="pest">
+      Cockroach Control<br>
+      Bed Bug Treatment<br>
+      Termite Control<br>
+    </div>
+    <button onclick="contact('Pest Control')">Get Quote</button>
+  </div>
+
+</div>
+
+<!-- WORKER REGISTRATION -->
+<div class="worker-section">
+  <h2>Join UrbanBro as a Service Partner</h2>
+  <p>Register for FREE and start getting customers</p>
+
+  <h3>Basic KYC Requirements (UAE)</h3>
+  <p>
+    ✅ Emirates ID or Passport<br>
+    ✅ Valid Visa<br>
+    ✅ Trade License (if available)<br>
+    ✅ Experience Proof (optional)<br>
+    ✅ Contact Number<br>
+  </p>
+
+  <button onclick="contact('Worker Registration')">
+    Register as Freelancer
+  </button>
+</div>
+
+<footer>
+  <p>📞 WhatsApp: +971 50 160 4258</p>
+  <p>© 2026 UrbanBro Services Dubai</p>
+</footer>
+
+</body>
+</html>
